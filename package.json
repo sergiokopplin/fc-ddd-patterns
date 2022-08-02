@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@faker-js/faker": "^7.3.0",
     "@swc/cli": "^0.1.57",
     "@swc/core": "^1.2.222",
     "@swc/jest": "^0.2.22",

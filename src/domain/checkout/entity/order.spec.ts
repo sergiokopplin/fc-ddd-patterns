@@ -14,4 +14,10 @@ describe('Order Entity', () => {
 
     expect(sut).toBeTruthy()
   });
+
+  test('Should be all private on properties', () => {
+    const { sut } = makeSut()
+
+    expect(sut).toEqual({})
+  });
 });

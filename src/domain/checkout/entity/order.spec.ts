@@ -1,16 +1,17 @@
 import { faker } from '@faker-js/faker';
 import { Order, OrderParams } from './order';
+import { MissingOrderId, MissingOrderCustomerId } from './order.errors';
 import { OrderItem } from '../value-object/order-item';
 
 const makeSut = (params?: Partial<OrderParams>): { sut: Order } => {
-  const sut = new Order({
-    id: params?.id || faker.datatype.uuid(),
-    customerId: params?.customerId || faker.datatype.uuid(),
-    items: params?.items || [new OrderItem()],
-  })
-
+  const sutParams: OrderParams = {
+    id: faker.datatype.uuid(),
+    customerId: faker.datatype.uuid(),
+    items: [new OrderItem()],
+  }
+ 
   return {
-    sut,
+    sut: new Order(Object.assign(sutParams, params)),
   }
 }
 
@@ -37,5 +38,13 @@ describe('Order Entity', () => {
     const { sut } = makeSut({ items: [new OrderItem(), new OrderItem(), new OrderItem()] })
 
     expect(sut.items.length).toEqual(3)
+  });
+
+  test('Should throw when id missing', () => {
+    expect(() => makeSut({ id: null })).toThrowError(new MissingOrderId())
+  });
+
+  test('Should throw when customerId missing', () => {
+    expect(() => makeSut({ customerId: null })).toThrowError(new MissingOrderCustomerId())
   });
 });

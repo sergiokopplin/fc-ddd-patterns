@@ -51,7 +51,7 @@
 + get name          string
 + get rewardPoints  number
 + validate          boolean
-+ changeName        void
++ changeName        void      -> validate
 + get Address       Address
 + changeAddress     void
 + isActive          boolean
@@ -100,8 +100,8 @@
 + get id        string
 + get name      string
 + get price     number
-+ changeName    void
-+ changePrice   void
++ changeName    void      -> validate
++ changePrice   void      -> validate
 + validate      boolean
 ---
 > Auto Validate

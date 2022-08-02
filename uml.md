@@ -20,15 +20,40 @@
 ## Order Item Value Object Class
 
 ```txt
-- id string
+- id        string
 - productId string
-- name string
-- price number
-- quantity number
+- name      string
+- price     number
+- quantity  number
 ---
-+ id string
-+ name string
-+ productId string
-+ quantity number
-+ price number
++ get id        string
++ get name      string
++ get productId string
++ get quantity  number
++ get price     number
+```
+
+## Customer
+
+```txt
+- id            string
+- name          string    = ""
+- !address      Address
+- active        boolean   = false
+- rewardPoints  number    = 0
+---
++ get id            string
++ get name          string
++ get rewardPoints  number
++ validate          boolean
++ changeName        void
++ get Address       Address
++ changeAddress     void
++ isActive          boolean
++ activate          void
++ deactivate        void
++ addRewardPoints   void
++ set Address       void
+---
+> Auto Validate
 ```

@@ -18,3 +18,10 @@ export class MissingOrderItems extends Error {
     this.message = "Items are required"
   }
 }
+
+export class NotEnoughOrderItems extends Error {
+  constructor() {
+    super()
+    this.message = "Quantity must be greater than 0"
+  }
+}

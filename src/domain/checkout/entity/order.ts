@@ -1,5 +1,5 @@
 import { OrderItem } from '../value-object/order-item';
-import { MissingOrderCustomerId, MissingOrderId, MissingOrderItems } from './order.errors';
+import { MissingOrderCustomerId, MissingOrderId, MissingOrderItems, NotEnoughOrderItems } from './order.errors';
 
 type Id = string
 type CustomerId = string
@@ -41,5 +41,9 @@ export class Order {
     if (!this._id) throw new MissingOrderId();
     if (!this._customerId) throw new MissingOrderCustomerId();
     if (!this._items) throw new MissingOrderItems();
+  
+    if (this._items.length <= 0) {
+      throw new NotEnoughOrderItems();
+    }
   }
 }

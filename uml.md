@@ -75,3 +75,20 @@
 ---
 > Auto Validate
 ```
+
+## Product
+
+```txt
+- private   id      string
+- private   name    string
+- private   price   number
+---
++ get id        string
++ get name      string
++ get price     number
++ changeName    void
++ changePrice   void
++ validate      boolean
+---
+> Auto Validate
+```

@@ -1,7 +1,10 @@
-import { Order } from './order';
+import { faker } from '@faker-js/faker';
+import { Order, OrderParams } from './order';
 
-const makeSut = (): { sut: Order } => {
-  const sut = new Order()
+const makeSut = (params?: OrderParams): { sut: Order } => {
+  const sut = new Order({
+    id: params?.id || faker.datatype.uuid()
+  })
 
   return {
     sut,
@@ -15,9 +18,9 @@ describe('Order Entity', () => {
     expect(sut).toBeTruthy()
   });
 
-  test('Should be all private on properties', () => {
-    const { sut } = makeSut()
+  test('Should get id', () => {
+    const { sut } = makeSut({ id: 'custom_id' })
 
-    expect(sut).toEqual({})
+    expect(sut.id).toEqual('custom_id')
   });
 });

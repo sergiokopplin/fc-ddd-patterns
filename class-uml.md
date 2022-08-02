@@ -3,23 +3,23 @@
 ## Order Class
 
 ```txt
-- id string
-- customerId string
-- items OrderItem[]
-- total number
+- id string ✅
+- customerId string ✅
+- items OrderItem[] ✅
+- total number ✅
 ---
-+ get id string
-+ get customerId string
-+ get items OrderItem[]
-+ validate boolean
-+ total number
++ get id string ✅
++ get customerId string ✅
++ get items OrderItem[] ✅
++ validate boolean ✅
++ total number ❌
 ---
-> Auto Validate
+> Auto Validate ✅
 --- Validation
-- "Id is required"
-- "CustomerId is required"
-- "Items are required"
-- "Quantity must be greater than 0"
+- "Id is required" ✅
+- "CustomerId is required" ✅
+- "Items are required" ✅
+- "Quantity must be greater than 0" ✅
 ```
 
 ## Order Item Value Object Class

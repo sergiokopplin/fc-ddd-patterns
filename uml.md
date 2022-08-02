@@ -15,6 +15,11 @@
 + total number
 ---
 > Auto Validate
+--- Validation
+- "Id is required"
+- "CustomerId is required"
+- "Items are required"
+- "Quantity must be greater than 0"
 ```
 
 ## Order Item Value Object Class
@@ -56,6 +61,10 @@
 + set Address       void
 ---
 > Auto Validate
+--- Validation
+- "Id is required"
+- "Name is required"
+- activate "Address is mandatory to activate a customer"
 ```
 
 ## Address Value Object Class
@@ -74,6 +83,11 @@
 + toString    string
 ---
 > Auto Validate
+--- Validation
+- "Street is required"
+- "Number is required"
+- "Zip is required"
+- "City is required"
 ```
 
 ## Product
@@ -91,4 +105,8 @@
 + validate      boolean
 ---
 > Auto Validate
+--- Validation
+- "Id is required"
+- "Name is required"
+- "Price must be greater than zero"
 ```

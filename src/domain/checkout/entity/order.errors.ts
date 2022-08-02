@@ -11,3 +11,10 @@ export class MissingOrderCustomerId extends Error {
     this.message = "CustomerId is required"
   }
 }
+
+export class MissingOrderItems extends Error {
+  constructor() {
+    super()
+    this.message = "Items are required"
+  }
+}

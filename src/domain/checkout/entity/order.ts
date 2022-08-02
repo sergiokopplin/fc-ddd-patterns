@@ -1,5 +1,5 @@
 import { OrderItem } from '../value-object/order-item';
-import { MissingOrderCustomerId, MissingOrderId } from './order.errors';
+import { MissingOrderCustomerId, MissingOrderId, MissingOrderItems } from './order.errors';
 
 type Id = string
 type CustomerId = string
@@ -40,5 +40,6 @@ export class Order {
   validate(): void {
     if (!this._id) throw new MissingOrderId();
     if (!this._customerId) throw new MissingOrderCustomerId();
+    if (!this._items) throw new MissingOrderItems();
   }
 }

@@ -57,3 +57,21 @@
 ---
 > Auto Validate
 ```
+
+## Address Value Object Class
+
+```txt
+- street  string  = ""
+- number  number  = 0
+- zip     string  = ""
+- city    string  = ""
+---
++ get street  string
++ get number  number
++ get zip     string
++ get city    string
++ validate    boolean
++ toString    string
+---
+> Auto Validate
+```

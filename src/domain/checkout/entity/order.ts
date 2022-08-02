@@ -5,7 +5,10 @@ type CustomerId = string
 type Items = OrderItem[]
 type Total = number
 
-export interface OrderParams { id: Id }
+export interface OrderParams {
+  id: Id,
+  customerId: CustomerId
+}
 
 export class Order {
   private _id: Id;
@@ -13,11 +16,16 @@ export class Order {
   private _items: Items;
   private _total: Total;
 
-  constructor ({ id }: OrderParams) {
+  constructor ({ id, customerId }: OrderParams) {
     this._id = id
+    this._customerId = customerId
   }
 
   get id () {
     return this._id   
+  }
+
+  get customerId () {
+    return this._customerId   
   }
 }

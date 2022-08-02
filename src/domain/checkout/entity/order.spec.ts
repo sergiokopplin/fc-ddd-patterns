@@ -1,9 +1,10 @@
 import { faker } from '@faker-js/faker';
 import { Order, OrderParams } from './order';
 
-const makeSut = (params?: OrderParams): { sut: Order } => {
+const makeSut = (params?: Partial<OrderParams>): { sut: Order } => {
   const sut = new Order({
-    id: params?.id || faker.datatype.uuid()
+    id: params?.id || faker.datatype.uuid(),
+    customerId: params?.customerId || faker.datatype.uuid()
   })
 
   return {
@@ -22,5 +23,11 @@ describe('Order Entity', () => {
     const { sut } = makeSut({ id: 'custom_id' })
 
     expect(sut.id).toEqual('custom_id')
+  });
+
+  test('Should get customerId', () => {
+    const { sut } = makeSut({ customerId: 'custom_customerId' })
+
+    expect(sut.customerId).toEqual('custom_customerId')
   });
 });

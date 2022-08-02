@@ -28,7 +28,7 @@
 - id        string
 - productId string
 - name      string
-- price     number
+- price     number (price * quantity)
 - quantity  number
 ---
 + get id        string
@@ -57,7 +57,7 @@
 + isActive          boolean
 + activate          void
 + deactivate        void
-+ addRewardPoints   void
++ addRewardPoints   void (rewardPoints += points)
 + set Address       void
 ---
 > Auto Validate
@@ -80,7 +80,7 @@
 + get zip     string
 + get city    string
 + validate    boolean
-+ toString    string
++ toString    string (street, number, zip city)
 ---
 > Auto Validate
 --- Validation

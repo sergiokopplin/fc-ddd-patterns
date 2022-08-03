@@ -12,7 +12,7 @@
 + get customerId string ✅
 + get items OrderItem[] ✅
 + validate boolean ✅
-+ total number ❌
++ total number ✅
 ---
 > Auto Validate ✅
 --- Validation

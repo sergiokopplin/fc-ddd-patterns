@@ -46,6 +46,27 @@ describe('Order Entity', () => {
     expect(sut.items.length).toEqual(3)
   });
 
+  test('Should return total', () => {
+    const { sut } = makeSut({
+      items: [
+        makeOrderItemSut({
+          price: 5,
+          quantity: 10
+        }).sut,
+        makeOrderItemSut({
+          price: 10,
+          quantity: 5
+        }).sut,
+        makeOrderItemSut({
+          price: 50,
+          quantity: 1
+        }).sut
+      ]
+    })
+
+    expect(sut.total()).toEqual(150)
+  });
+
   test('Should throw when id missing', () => {
     expect(() => makeSut({ id: null })).toThrowError(new MissingOrderId())
   });

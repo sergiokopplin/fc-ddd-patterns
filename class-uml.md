@@ -80,7 +80,7 @@
 + get zip     string ✅
 + get city    string ✅
 + validate    boolean ✅
-+ toString    string (street, number, zip city) ❌
++ toString    string (street, number, zip city) ✅
 ---
 > Auto Validate ✅
 --- Validation

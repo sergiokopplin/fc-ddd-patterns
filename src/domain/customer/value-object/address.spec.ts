@@ -12,7 +12,7 @@ export const makeSut = (params?: Partial<AddressParams>): { sut: Address } => {
     street: faker.random.word(),
     city: faker.random.word(),
     zip: faker.random.numeric(7),
-    number: faker.datatype.number(3),
+    number: faker.datatype.number({ min: 10 }),
   };
 
   return {
@@ -49,6 +49,17 @@ describe("Address Value Object", () => {
     const { sut } = makeSut({ city: "custom_city" });
 
     expect(sut.city).toBe("custom_city");
+  });
+
+  test("Should return toString", () => {
+    const { sut } = makeSut({
+      city: "custom_city",
+      number: 1234,
+      street: "custom_street",
+      zip: "custom_zip",
+    });
+
+    expect(sut.toString()).toBe("custom_street, 1234, custom_zip custom_city");
   });
 
   test("Should throw when street missing", () => {

@@ -6,20 +6,20 @@ import {
 } from "./address.errors";
 
 type Street = string;
-type Number = number;
+type AddressNumber = number;
 type Zip = string;
 type City = string;
 
 export interface AddressParams {
   street: Street;
-  number: Number;
+  number: AddressNumber;
   zip: Zip;
   city: City;
 }
 
 export class Address {
   private _street: Street = "";
-  private _number: Number = null;
+  private _number: AddressNumber = null;
   private _zip: Zip = "";
   private _city: City = "";
 
@@ -35,7 +35,7 @@ export class Address {
     return this._street;
   }
 
-  get number(): Number {
+  get number(): AddressNumber {
     return this._number;
   }
 
@@ -52,5 +52,9 @@ export class Address {
     if (!this._number) throw new MissingCustomerNumber();
     if (!this._zip) throw new MissingCustomerZip();
     if (!this._city) throw new MissingCustomerCity();
+  }
+
+  toString(): string {
+    return `${this._street}, ${this._number}, ${this._zip} ${this._city}`;
   }
 }

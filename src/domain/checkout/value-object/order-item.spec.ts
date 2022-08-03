@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
 import { OrderItem, OrderItemParams } from './order-item';
 
-const makeSut = (params?: Partial<OrderItemParams>): { sut: OrderItem } => {
+export const makeSut = (params?: Partial<OrderItemParams>): { sut: OrderItem } => {
   const sutParams: OrderItemParams = {
     id: faker.datatype.uuid(),
     name: faker.random.word(),

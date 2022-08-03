@@ -41,72 +41,72 @@
 ## Customer
 
 ```txt
-- id            string
-- name          string    = ""
-- !address      Address
-- active        boolean   = false
-- rewardPoints  number    = 0
+- id            string ❌
+- name          string    = "" ❌
+- !address      Address ❌
+- active        boolean   = false ❌
+- rewardPoints  number    = 0 ❌
 ---
-+ get id            string
-+ get name          string
-+ get rewardPoints  number
-+ validate          boolean
-+ changeName        void      -> validate
-+ get Address       Address
-+ changeAddress     void
-+ isActive          boolean
-+ activate          void
-+ deactivate        void
-+ addRewardPoints   void (rewardPoints += points)
-+ set Address       void
++ get id            string ❌
++ get name          string ❌
++ get rewardPoints  number ❌
++ validate          boolean ❌
++ changeName        void      -> validate ❌
++ get Address       Address ❌
++ changeAddress     void ❌
++ isActive          boolean ❌
++ activate          void ❌
++ deactivate        void ❌
++ addRewardPoints   void (rewardPoints += points) ❌
++ set Address       void ❌
 ---
-> Auto Validate
+> Auto Validate ❌
 --- Validation
-- "Id is required"
-- "Name is required"
-- activate "Address is mandatory to activate a customer"
+- "Id is required" ❌
+- "Name is required" ❌
+- activate "Address is mandatory to activate a customer" ❌
 ```
 
 ## Address Value Object Class
 
 ```txt
-- street  string  = ""
-- number  number  = 0
-- zip     string  = ""
-- city    string  = ""
+- street  string  = "" ❌
+- number  number  = 0 ❌
+- zip     string  = "" ❌
+- city    string  = "" ❌
 ---
-+ get street  string
-+ get number  number
-+ get zip     string
-+ get city    string
-+ validate    boolean
-+ toString    string (street, number, zip city)
++ get street  string ❌
++ get number  number ❌
++ get zip     string ❌
++ get city    string ❌
++ validate    boolean ❌
++ toString    string (street, number, zip city) ❌
 ---
-> Auto Validate
+> Auto Validate ❌
 --- Validation
-- "Street is required"
-- "Number is required"
-- "Zip is required"
-- "City is required"
+- "Street is required" ❌
+- "Number is required" ❌
+- "Zip is required" ❌
+- "City is required" ❌
 ```
 
 ## Product
 
 ```txt
-- private   id      string
-- private   name    string
-- private   price   number
+- private   id      string ❌
+- private   name    string ❌
+- private   price   number ❌
 ---
-+ get id        string
-+ get name      string
-+ get price     number
-+ changeName    void      -> validate
-+ changePrice   void      -> validate
-+ validate      boolean
++ get id        string ❌
++ get name      string ❌
++ get price     number ❌
++ changeName    void      -> validate ❌
++ changePrice   void      -> validate ❌
++ validate      boolean ❌
 ---
-> Auto Validate
+> Auto Validate ❌
 --- Validation
-- "Id is required"
-- "Name is required"
-- "Price must be greater than zero"
+- "Id is required" ❌
+- "Name is required" ❌
+- "Price must be greater than zero" ❌
 ```

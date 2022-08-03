@@ -30,4 +30,12 @@ export class Address {
   get number(): Number {
     return this._number;
   }
+
+  get zip(): Zip {
+    return this._zip;
+  }
+
+  get city(): City {
+    return this._city;
+  }
 }

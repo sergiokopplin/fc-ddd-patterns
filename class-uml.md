@@ -77,8 +77,8 @@
 ---
 + get street  string ✅
 + get number  number ✅
-+ get zip     string ❌
-+ get city    string ❌
++ get zip     string ✅
++ get city    string ✅
 + validate    boolean ❌
 + toString    string (street, number, zip city) ❌
 ---

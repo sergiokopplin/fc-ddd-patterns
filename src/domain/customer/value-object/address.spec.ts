@@ -32,4 +32,16 @@ describe("Address Value Object", () => {
 
     expect(sut.number).toBe(1234);
   });
+
+  test("Should get zip", () => {
+    const { sut } = makeSut({ zip: "1234" });
+
+    expect(sut.zip).toBe("1234");
+  });
+
+  test("Should get city", () => {
+    const { sut } = makeSut({ city: "custom_city" });
+
+    expect(sut.city).toBe("custom_city");
+  });
 });

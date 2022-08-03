@@ -75,7 +75,7 @@
 - zip     string  = "" ✅
 - city    string  = "" ✅
 ---
-+ get street  string ❌
++ get street  string ✅
 + get number  number ❌
 + get zip     string ❌
 + get city    string ❌

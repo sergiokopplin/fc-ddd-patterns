@@ -22,4 +22,8 @@ export class Address {
     this._zip = zip;
     this._city = city;
   }
+
+  get street(): Street {
+    return this._street;
+  }
 }

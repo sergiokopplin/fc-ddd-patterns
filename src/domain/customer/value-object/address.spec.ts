@@ -20,4 +20,10 @@ describe("Address Value Object", () => {
 
     expect(sut).toBeTruthy();
   });
+
+  test("Should get street", () => {
+    const { sut } = makeSut({ street: "custom_street" });
+
+    expect(sut.street).toBe("custom_street");
+  });
 });

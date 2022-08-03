@@ -25,17 +25,17 @@
 ## Order Item Value Object Class
 
 ```txt
-- id        string
-- productId string
-- name      string
-- price     number (price * quantity)
-- quantity  number
+- id        string ✅
+- productId string ✅
+- name      string ✅
+- price     number (price * quantity) ✅
+- quantity  number ✅
 ---
-+ get id        string
-+ get name      string
-+ get productId string
-+ get quantity  number
-+ get price     number
++ get id        string ✅
++ get name      string ✅
++ get productId string ✅
++ get quantity  number ✅
++ get price     number ✅
 ```
 
 ## Customer

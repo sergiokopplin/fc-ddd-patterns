@@ -70,10 +70,10 @@
 ## Address Value Object Class
 
 ```txt
-- street  string  = "" ❌
-- number  number  = 0 ❌
-- zip     string  = "" ❌
-- city    string  = "" ❌
+- street  string  = "" ✅
+- number  number  = 0 ✅
+- zip     string  = "" ✅
+- city    string  = "" ✅
 ---
 + get street  string ❌
 + get number  number ❌

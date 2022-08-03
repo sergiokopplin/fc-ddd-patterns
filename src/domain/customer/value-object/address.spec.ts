@@ -1,5 +1,11 @@
 import { faker } from "@faker-js/faker";
 import { Address, AddressParams } from "./address";
+import {
+  MissingCustomerCity,
+  MissingCustomerNumber,
+  MissingCustomerStreet,
+  MissingCustomerZip,
+} from "./address.errors";
 
 export const makeSut = (params?: Partial<AddressParams>): { sut: Address } => {
   const sutParams: AddressParams = {
@@ -43,5 +49,27 @@ describe("Address Value Object", () => {
     const { sut } = makeSut({ city: "custom_city" });
 
     expect(sut.city).toBe("custom_city");
+  });
+
+  test("Should throw when street missing", () => {
+    expect(() => makeSut({ street: null })).toThrowError(
+      new MissingCustomerStreet()
+    );
+  });
+
+  test("Should throw when number missing", () => {
+    expect(() => makeSut({ number: null })).toThrowError(
+      new MissingCustomerNumber()
+    );
+  });
+
+  test("Should throw when zip missing", () => {
+    expect(() => makeSut({ zip: null })).toThrowError(new MissingCustomerZip());
+  });
+
+  test("Should throw when city missing", () => {
+    expect(() => makeSut({ city: null })).toThrowError(
+      new MissingCustomerCity()
+    );
   });
 });

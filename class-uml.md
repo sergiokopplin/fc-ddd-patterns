@@ -79,15 +79,15 @@
 + get number  number ✅
 + get zip     string ✅
 + get city    string ✅
-+ validate    boolean ❌
++ validate    boolean ✅
 + toString    string (street, number, zip city) ❌
 ---
-> Auto Validate ❌
+> Auto Validate ✅
 --- Validation
-- "Street is required" ❌
-- "Number is required" ❌
-- "Zip is required" ❌
-- "City is required" ❌
+- "Street is required" ✅
+- "Number is required" ✅
+- "Zip is required" ✅
+- "City is required" ✅
 ```
 
 ## Product

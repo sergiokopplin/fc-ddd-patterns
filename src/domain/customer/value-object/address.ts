@@ -1,3 +1,10 @@
+import {
+  MissingCustomerCity,
+  MissingCustomerNumber,
+  MissingCustomerStreet,
+  MissingCustomerZip,
+} from "./address.errors";
+
 type Street = string;
 type Number = number;
 type Zip = string;
@@ -5,14 +12,14 @@ type City = string;
 
 export interface AddressParams {
   street: Street;
-  number: number;
+  number: Number;
   zip: Zip;
   city: City;
 }
 
 export class Address {
   private _street: Street = "";
-  private _number: number = 0;
+  private _number: Number = null;
   private _zip: Zip = "";
   private _city: City = "";
 
@@ -21,6 +28,7 @@ export class Address {
     this._number = number;
     this._zip = zip;
     this._city = city;
+    this.validate();
   }
 
   get street(): Street {
@@ -37,5 +45,12 @@ export class Address {
 
   get city(): City {
     return this._city;
+  }
+
+  validate(): void {
+    if (!this._street) throw new MissingCustomerStreet();
+    if (!this._number) throw new MissingCustomerNumber();
+    if (!this._zip) throw new MissingCustomerZip();
+    if (!this._city) throw new MissingCustomerCity();
   }
 }

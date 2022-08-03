@@ -12,6 +12,7 @@
   },
   "scripts": {
     "test": "npm run tsc -- --noEmit && jest",
+    "test:coverage": "jest --collectCoverage",
     "tsc": "tsc"
   },
   "dependencies": {

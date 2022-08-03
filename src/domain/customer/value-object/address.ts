@@ -26,4 +26,8 @@ export class Address {
   get street(): Street {
     return this._street;
   }
+
+  get number(): Number {
+    return this._number;
+  }
 }

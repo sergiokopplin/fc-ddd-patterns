@@ -26,4 +26,10 @@ describe("Address Value Object", () => {
 
     expect(sut.street).toBe("custom_street");
   });
+
+  test("Should get number", () => {
+    const { sut } = makeSut({ number: 1234 });
+
+    expect(sut.number).toBe(1234);
+  });
 });

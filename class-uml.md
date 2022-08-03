@@ -76,7 +76,7 @@
 - city    string  = "" ✅
 ---
 + get street  string ✅
-+ get number  number ❌
++ get number  number ✅
 + get zip     string ❌
 + get city    string ❌
 + validate    boolean ❌

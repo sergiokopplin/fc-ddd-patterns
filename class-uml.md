@@ -41,11 +41,11 @@
 ## Customer
 
 ```txt
-- id            string ❌
-- name          string    = "" ❌
-- !address      Address ❌
-- active        boolean   = false ❌
-- rewardPoints  number    = 0 ❌
+- id            string ✅
+- name          string    = "" ✅
+- !address      Address ✅
+- active        boolean   = false ✅
+- rewardPoints  number    = 0 ✅
 ---
 + get id            string ❌
 + get name          string ❌

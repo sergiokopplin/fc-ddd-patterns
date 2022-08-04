@@ -47,18 +47,18 @@
 - active        boolean   = false ✅
 - rewardPoints  number    = 0 ✅
 ---
-+ get id            string ❌
-+ get name          string ❌
-+ get rewardPoints  number ❌
++ get id            string ✅
++ get name          string ✅
++ get rewardPoints  number ✅
++ get Address       Address ✅
++ set Address       void ❌
 + validate          boolean ❌
 + changeName        void      -> validate ❌
-+ get Address       Address ❌
 + changeAddress     void ❌
 + isActive          boolean ❌
 + activate          void ❌
 + deactivate        void ❌
 + addRewardPoints   void (rewardPoints += points) ❌
-+ set Address       void ❌
 ---
 > Auto Validate ❌
 --- Validation

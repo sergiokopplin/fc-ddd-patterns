@@ -22,4 +22,29 @@ describe("Customer Entity", () => {
 
     expect(sut).toBeTruthy();
   });
+
+  test("Should get id", () => {
+    const { sut } = makeSut({ id: "custom_id" });
+
+    expect(sut.id).toEqual("custom_id");
+  });
+
+  test("Should get name", () => {
+    const { sut } = makeSut({ name: "custom_name" });
+
+    expect(sut.name).toEqual("custom_name");
+  });
+
+  test("Should get rewardPoints", () => {
+    const { sut } = makeSut({ rewardPoints: 1234 });
+
+    expect(sut.rewardPoints).toEqual(1234);
+  });
+
+  test("Should get Address", () => {
+    const customAddress = makeAddressSut().sut;
+    const { sut } = makeSut({ address: customAddress });
+
+    expect(sut.address).toEqual(customAddress);
+  });
 });

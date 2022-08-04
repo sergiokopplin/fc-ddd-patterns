@@ -28,4 +28,20 @@ export class Customer {
     this._active = active;
     this._rewardPoints = rewardPoints;
   }
+
+  get id(): Id {
+    return this._id;
+  }
+
+  get name(): Name {
+    return this._name;
+  }
+
+  get address(): Address {
+    return this._address;
+  }
+
+  get rewardPoints(): RewardPoints {
+    return this._rewardPoints;
+  }
 }

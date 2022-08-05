@@ -133,4 +133,14 @@ describe("Customer Entity", () => {
 
     expect(sut.isActive()).toEqual(false);
   });
+
+  test("Should addRewardPoints", () => {
+    const { sut } = makeSut({ rewardPoints: 0 });
+
+    sut.addRewardPoints(2);
+    sut.addRewardPoints(3);
+    sut.addRewardPoints(5);
+
+    expect(sut.rewardPoints).toBe(10);
+  });
 });

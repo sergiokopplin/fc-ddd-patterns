@@ -64,4 +64,8 @@ export class Customer {
   isActive(): boolean {
     return this._active;
   }
+
+  addRewardPoints(rewardPoints: RewardPoints): void {
+    this._rewardPoints += rewardPoints;
+  }
 }

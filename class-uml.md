@@ -58,7 +58,7 @@
 + isActive          boolean ✅
 + activate          void ✅
 + deactivate        void ✅
-+ addRewardPoints   void (rewardPoints += points) ❌
++ addRewardPoints   void (rewardPoints += points) ✅
 ---
 > Auto Validate ❌
 --- Validation

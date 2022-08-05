@@ -55,6 +55,11 @@ export class Customer {
     this._address = address;
   }
 
+  changeName(name: Name) {
+    this._name = name;
+    this.validate();
+  }
+
   activate(): void {
     this._active = true;
   }

@@ -145,6 +145,16 @@ describe("Customer Entity", () => {
     expect(sut.rewardPoints).toBe(10);
   });
 
+  test("Should changeName", () => {
+    const { sut } = makeSut({ name: "custom_name" });
+
+    expect(sut.name).toBe("custom_name");
+
+    sut.changeName("second_custom_name");
+
+    expect(sut.name).toBe("second_custom_name");
+  });
+
   test("Should throw when id missing", () => {
     expect(() => makeSut({ id: null })).toThrowError(new MissingCustomerId());
   });

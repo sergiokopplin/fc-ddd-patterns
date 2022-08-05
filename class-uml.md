@@ -53,7 +53,7 @@
 + get Address       Address ✅
 + set Address       void ✅
 + validate          boolean ✅
-+ changeName        void      -> validate ❌
++ changeName        void      -> validate ✅
 + changeAddress     void ✅
 + isActive          boolean ✅
 + activate          void ✅

@@ -78,6 +78,36 @@ describe("Customer Entity", () => {
     expect(sut.address.zip).toEqual("second_custom_zip");
   });
 
+  test("Should changeAddress", () => {
+    const customAddress = makeAddressSut({
+      street: "custom_street",
+      city: "custom_city",
+      number: 1234,
+      zip: "custom_zip",
+    }).sut;
+
+    const secondCustomAddress = makeAddressSut({
+      street: "second_custom_street",
+      city: "second_custom_city",
+      number: 12340000,
+      zip: "second_custom_zip",
+    }).sut;
+
+    const { sut } = makeSut({ address: customAddress });
+
+    expect(sut.address.city).toEqual("custom_city");
+    expect(sut.address.number).toEqual(1234);
+    expect(sut.address.street).toEqual("custom_street");
+    expect(sut.address.zip).toEqual("custom_zip");
+
+    sut.changeAddress(secondCustomAddress);
+
+    expect(sut.address.city).toEqual("second_custom_city");
+    expect(sut.address.number).toEqual(12340000);
+    expect(sut.address.street).toEqual("second_custom_street");
+    expect(sut.address.zip).toEqual("second_custom_zip");
+  });
+
   test("Should return isActive", () => {
     const { sut } = makeSut();
 

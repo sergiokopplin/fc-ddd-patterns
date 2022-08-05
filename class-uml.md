@@ -54,7 +54,7 @@
 + set Address       void ✅
 + validate          boolean ❌
 + changeName        void      -> validate ❌
-+ changeAddress     void ❌
++ changeAddress     void ✅
 + isActive          boolean ✅
 + activate          void ✅
 + deactivate        void ❌

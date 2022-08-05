@@ -49,6 +49,10 @@ export class Customer {
     this._address = address;
   }
 
+  changeAddress(address: Address) {
+    this._address = address;
+  }
+
   activate(): void {
     this._active = true;
   }

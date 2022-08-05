@@ -83,4 +83,14 @@ describe("Customer Entity", () => {
 
     expect(sut.isActive()).toEqual(false);
   });
+
+  test("Should activate", () => {
+    const { sut } = makeSut();
+
+    expect(sut.isActive()).toEqual(false);
+
+    sut.activate();
+
+    expect(sut.isActive()).toEqual(true);
+  });
 });

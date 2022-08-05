@@ -1,4 +1,5 @@
 import { Address as AddressValueObject } from "../value-object/address";
+import { MissingCustomerId, MissingCustomerName } from "./customer.errors";
 
 type Id = string;
 type Name = string;
@@ -27,6 +28,7 @@ export class Customer {
     this._address = address;
     this._active = active;
     this._rewardPoints = rewardPoints;
+    this.validate();
   }
 
   get id(): Id {
@@ -67,5 +69,10 @@ export class Customer {
 
   addRewardPoints(rewardPoints: RewardPoints): void {
     this._rewardPoints += rewardPoints;
+  }
+
+  validate(): void {
+    if (!this._id) throw new MissingCustomerId();
+    if (!this._name) throw new MissingCustomerName();
   }
 }

@@ -1,6 +1,7 @@
 import { faker } from "@faker-js/faker";
 import { Customer, CustomerParams } from "./customer";
 import { makeSut as makeAddressSut } from "../value-object/address.spec";
+import { MissingCustomerId, MissingCustomerName } from "./customer.errors";
 
 const makeSut = (params?: Partial<CustomerParams>): { sut: Customer } => {
   const sutParams: CustomerParams = {
@@ -142,5 +143,15 @@ describe("Customer Entity", () => {
     sut.addRewardPoints(5);
 
     expect(sut.rewardPoints).toBe(10);
+  });
+
+  test("Should throw when id missing", () => {
+    expect(() => makeSut({ id: null })).toThrowError(new MissingCustomerId());
+  });
+
+  test("Should throw when name missing", () => {
+    expect(() => makeSut({ name: null })).toThrowError(
+      new MissingCustomerName()
+    );
   });
 });

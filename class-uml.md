@@ -52,7 +52,7 @@
 + get rewardPoints  number ✅
 + get Address       Address ✅
 + set Address       void ✅
-+ validate          boolean ❌
++ validate          boolean ✅
 + changeName        void      -> validate ❌
 + changeAddress     void ✅
 + isActive          boolean ✅
@@ -60,10 +60,10 @@
 + deactivate        void ✅
 + addRewardPoints   void (rewardPoints += points) ✅
 ---
-> Auto Validate ❌
+> Auto Validate ✅
 --- Validation
-- "Id is required" ❌
-- "Name is required" ❌
+- "Id is required" ✅
+- "Name is required" ✅
 - activate "Address is mandatory to activate a customer" ❌
 ```
 

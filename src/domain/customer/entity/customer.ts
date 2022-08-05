@@ -44,4 +44,8 @@ export class Customer {
   get rewardPoints(): RewardPoints {
     return this._rewardPoints;
   }
+
+  set address(address: Address) {
+    this._address = address;
+  }
 }

@@ -51,7 +51,7 @@
 + get name          string ✅
 + get rewardPoints  number ✅
 + get Address       Address ✅
-+ set Address       void ❌
++ set Address       void ✅
 + validate          boolean ❌
 + changeName        void      -> validate ❌
 + changeAddress     void ❌

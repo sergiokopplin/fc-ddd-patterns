@@ -77,4 +77,10 @@ describe("Customer Entity", () => {
     expect(sut.address.street).toEqual("second_custom_street");
     expect(sut.address.zip).toEqual("second_custom_zip");
   });
+
+  test("Should return isActive", () => {
+    const { sut } = makeSut();
+
+    expect(sut.isActive()).toEqual(false);
+  });
 });

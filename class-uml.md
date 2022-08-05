@@ -55,7 +55,7 @@
 + validate          boolean ❌
 + changeName        void      -> validate ❌
 + changeAddress     void ❌
-+ isActive          boolean ❌
++ isActive          boolean ✅
 + activate          void ❌
 + deactivate        void ❌
 + addRewardPoints   void (rewardPoints += points) ❌

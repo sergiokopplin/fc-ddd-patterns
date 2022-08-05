@@ -48,4 +48,8 @@ export class Customer {
   set address(address: Address) {
     this._address = address;
   }
+
+  isActive(): boolean {
+    return this._active;
+  }
 }

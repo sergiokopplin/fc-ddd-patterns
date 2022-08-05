@@ -1,5 +1,9 @@
 import { Address as AddressValueObject } from "../value-object/address";
-import { MissingCustomerId, MissingCustomerName } from "./customer.errors";
+import {
+  AddressMandatoryToActivate,
+  MissingCustomerId,
+  MissingCustomerName,
+} from "./customer.errors";
 
 type Id = string;
 type Name = string;
@@ -61,6 +65,10 @@ export class Customer {
   }
 
   activate(): void {
+    if (this._address === null) {
+      throw new AddressMandatoryToActivate();
+    }
+
     this._active = true;
   }
 

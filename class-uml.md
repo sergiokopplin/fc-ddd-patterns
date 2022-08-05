@@ -64,7 +64,7 @@
 --- Validation
 - "Id is required" ✅
 - "Name is required" ✅
-- activate "Address is mandatory to activate a customer" ❌
+- activate "Address is mandatory to activate a customer" ✅
 ```
 
 ## Address Value Object Class

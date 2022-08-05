@@ -1,7 +1,11 @@
 import { faker } from "@faker-js/faker";
 import { Customer, CustomerParams } from "./customer";
 import { makeSut as makeAddressSut } from "../value-object/address.spec";
-import { MissingCustomerId, MissingCustomerName } from "./customer.errors";
+import {
+  AddressMandatoryToActivate,
+  MissingCustomerId,
+  MissingCustomerName,
+} from "./customer.errors";
 
 const makeSut = (params?: Partial<CustomerParams>): { sut: Customer } => {
   const sutParams: CustomerParams = {
@@ -163,5 +167,11 @@ describe("Customer Entity", () => {
     expect(() => makeSut({ name: null })).toThrowError(
       new MissingCustomerName()
     );
+  });
+
+  test("Should throw when activate without address", () => {
+    const { sut } = makeSut({ address: null });
+
+    expect(() => sut.activate()).toThrowError(new AddressMandatoryToActivate());
   });
 });

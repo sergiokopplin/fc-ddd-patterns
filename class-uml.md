@@ -93,20 +93,20 @@
 ## Product
 
 ```txt
-- private   id      string ❌
-- private   name    string ❌
-- private   price   number ❌
+- private   id      string ✅
+- private   name    string ✅
+- private   price   number ✅
 ---
-+ get id        string ❌
-+ get name      string ❌
-+ get price     number ❌
-+ changeName    void      -> validate ❌
-+ changePrice   void      -> validate ❌
-+ validate      boolean ❌
++ get id        string ✅
++ get name      string ✅
++ get price     number ✅
++ changeName    void      -> validate ✅
++ changePrice   void      -> validate ✅
++ validate      boolean ✅
 ---
-> Auto Validate ❌
+> Auto Validate ✅
 --- Validation
-- "Id is required" ❌
-- "Name is required" ❌
-- "Price must be greater than zero" ❌
+- "Id is required" ✅
+- "Name is required" ✅
+- "Price must be greater than zero" ✅
 ```

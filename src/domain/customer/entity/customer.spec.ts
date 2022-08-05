@@ -123,4 +123,14 @@ describe("Customer Entity", () => {
 
     expect(sut.isActive()).toEqual(true);
   });
+
+  test("Should deactivate", () => {
+    const { sut } = makeSut({ active: true });
+
+    expect(sut.isActive()).toEqual(true);
+
+    sut.deactivate();
+
+    expect(sut.isActive()).toEqual(false);
+  });
 });

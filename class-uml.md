@@ -57,7 +57,7 @@
 + changeAddress     void ✅
 + isActive          boolean ✅
 + activate          void ✅
-+ deactivate        void ❌
++ deactivate        void ✅
 + addRewardPoints   void (rewardPoints += points) ❌
 ---
 > Auto Validate ❌

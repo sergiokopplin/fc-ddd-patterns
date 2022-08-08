@@ -4,13 +4,13 @@
 
 ```txt
 ---
-static placeOrder (customer, items): Order ❌
+static placeOrder (customer, items): Order ✅
 business rules
-- add reward points -> order.total / 2 ❌
+- add reward points -> order.total / 2 ✅
 validations
-- Order must have at least one item ❌
+- Order must have at least one item ✅
 ---
-static total (orders): number ❌
+static total (orders): number ✅
 ---
 ```
 

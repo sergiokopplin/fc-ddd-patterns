@@ -1,4 +1,4 @@
-import { makeSut } from "./__mocks__/factory";
+import { makeSut } from "./__mocks__/order-item-factory";
 
 describe("OrderItem Value Object", () => {
   test("Should create Entity without errors", () => {

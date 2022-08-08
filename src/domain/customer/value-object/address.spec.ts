@@ -4,7 +4,7 @@ import {
   MissingCustomerStreet,
   MissingCustomerZip,
 } from "./address.errors";
-import { makeSut } from "./__mocks__/factory";
+import { makeSut } from "./__mocks__/address-factory";
 
 describe("Address Value Object", () => {
   test("Should create Value Object without errors", () => {

@@ -1,8 +1,8 @@
 import { OrderService } from "./order-service";
 import { MinimumItemsOnOrderService } from "./order-service.errors";
-import { makeSut as makeSutCustomer } from "../../customer/entity/__mocks__/factory";
-import { makeSut as makeSutOrderItem } from "../value-object/__mocks__/factory";
-import { makeSut as makeSutOrder } from "../entity/__mocks__/factory";
+import { makeSut as makeSutCustomer } from "../../customer/entity/__mocks__/customer-factory";
+import { makeSut as makeSutOrderItem } from "../value-object/__mocks__/order-item-factory";
+import { makeSut as makeSutOrder } from "../entity/__mocks__/order-factory";
 
 describe("OrderService Entity", () => {
   test("Should placeOrder and put items", () => {

@@ -4,8 +4,8 @@ import {
   MissingOrderItems,
   NotEnoughOrderItems,
 } from "./order.errors";
-import { makeSut as makeOrderItemSut } from "../value-object/__mocks__/factory";
-import { makeSut } from "./__mocks__/factory";
+import { makeSut as makeOrderItemSut } from "../value-object/__mocks__/order-item-factory";
+import { makeSut } from "./__mocks__/order-factory";
 
 describe("Order Entity", () => {
   test("Should create Entity without errors", () => {

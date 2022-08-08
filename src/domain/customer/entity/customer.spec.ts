@@ -1,5 +1,5 @@
-import { makeSut as makeAddressSut } from "../value-object/__mocks__/factory";
-import { makeSut } from "./__mocks__/factory";
+import { makeSut as makeAddressSut } from "../value-object/__mocks__/address-factory";
+import { makeSut } from "./__mocks__/customer-factory";
 
 import {
   AddressMandatoryToActivate,

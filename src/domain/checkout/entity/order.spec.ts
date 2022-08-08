@@ -1,5 +1,3 @@
-import { faker } from "@faker-js/faker";
-import { Order, OrderParams } from "./order";
 import {
   MissingOrderId,
   MissingOrderCustomerId,
@@ -7,18 +5,7 @@ import {
   NotEnoughOrderItems,
 } from "./order.errors";
 import { makeSut as makeOrderItemSut } from "../value-object/__mocks__/factory";
-
-const makeSut = (params?: Partial<OrderParams>): { sut: Order } => {
-  const sutParams: OrderParams = {
-    id: faker.datatype.uuid(),
-    customerId: faker.datatype.uuid(),
-    items: [makeOrderItemSut().sut],
-  };
-
-  return {
-    sut: new Order(Object.assign(sutParams, params)),
-  };
-};
+import { makeSut } from "./__mocks__/factory";
 
 describe("Order Entity", () => {
   test("Should create Entity without errors", () => {

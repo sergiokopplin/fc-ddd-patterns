@@ -1,22 +1,9 @@
-import { faker } from "@faker-js/faker";
-import { Product, ProductParams } from "./product";
 import {
   MissingProductId,
   MissingProductName,
   PriceGreaterThanZero,
 } from "./product.errors";
-
-const makeSut = (params?: Partial<ProductParams>): { sut: Product } => {
-  const sutParams: ProductParams = {
-    id: faker.datatype.uuid(),
-    name: faker.random.word(),
-    price: 0,
-  };
-
-  return {
-    sut: new Product(Object.assign(sutParams, params)),
-  };
-};
+import { makeSut } from "./__mocks__/product-factory";
 
 describe("Product Entity", () => {
   test("Should create Entity without errors", () => {

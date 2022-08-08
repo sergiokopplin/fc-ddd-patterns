@@ -18,8 +18,8 @@ static total (orders): number ✅
 
 ```txt
 ---
-static increasePrice(products: Product[], percentage: number): Product[] ❌
+static increasePrice(products: Product[], percentage: number): Product[] ✅
 business rules
-- (product.price * percentage) / 100 + product.price ❌
+- (product.price * percentage) / 100 + product.price ✅
 ---
 ```

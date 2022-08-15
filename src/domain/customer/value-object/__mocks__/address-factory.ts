@@ -1,5 +1,5 @@
-import { faker } from "@faker-js/faker";
-import { Address, AddressParams } from "../address";
+import { faker } from '@faker-js/faker'
+import { Address, AddressParams } from '../address'
 
 export const makeAddressSut = (
   params?: Partial<AddressParams>
@@ -8,10 +8,10 @@ export const makeAddressSut = (
     street: faker.random.word(),
     city: faker.random.word(),
     zip: faker.random.numeric(7),
-    number: faker.datatype.number({ min: 10 }),
-  };
+    number: faker.datatype.number({ min: 10 })
+  }
 
   return {
-    sut: new Address(Object.assign(sutParams, params)),
-  };
-};
+    sut: new Address(Object.assign(sutParams, params))
+  }
+}

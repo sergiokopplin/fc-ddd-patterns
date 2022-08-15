@@ -1,6 +1,6 @@
-import { faker } from "@faker-js/faker";
-import { Customer, CustomerParams } from "../customer";
-import { makeAddressSut } from "../../value-object/__mocks__/address-factory";
+import { faker } from '@faker-js/faker'
+import { Customer, CustomerParams } from '../customer'
+import { makeAddressSut } from '../../value-object/__mocks__/address-factory'
 
 export const makeCustomerSut = (
   params?: Partial<CustomerParams>
@@ -10,10 +10,10 @@ export const makeCustomerSut = (
     active: false,
     name: faker.random.word(),
     rewardPoints: 0,
-    address: makeAddressSut().sut,
-  };
+    address: makeAddressSut().sut
+  }
 
   return {
-    sut: new Customer(Object.assign(sutParams, params)),
-  };
-};
+    sut: new Customer(Object.assign(sutParams, params))
+  }
+}

@@ -1,5 +1,5 @@
-import { faker } from "@faker-js/faker";
-import { OrderItem, OrderItemParams } from "../order-item";
+import { faker } from '@faker-js/faker'
+import { OrderItem, OrderItemParams } from '../order-item'
 
 export const makeOrderItemSut = (
   params?: Partial<OrderItemParams>
@@ -9,10 +9,10 @@ export const makeOrderItemSut = (
     name: faker.random.word(),
     price: faker.datatype.number(),
     productId: faker.datatype.uuid(),
-    quantity: faker.datatype.number(),
-  };
+    quantity: faker.datatype.number()
+  }
 
   return {
-    sut: new OrderItem(Object.assign(sutParams, params)),
-  };
-};
+    sut: new OrderItem(Object.assign(sutParams, params))
+  }
+}

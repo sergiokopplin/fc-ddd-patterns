@@ -1,2 +1,2 @@
-export * from "./customer.model";
-export * from "./customer.repository";
+export * from './customer.model'
+export * from './customer.repository'

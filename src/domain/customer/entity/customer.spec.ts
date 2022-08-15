@@ -1,6 +1,5 @@
 import { makeAddressSut } from '../value-object/__mocks__/address-factory'
 import { makeCustomerSut } from './__mocks__/customer-factory'
-
 import {
   AddressMandatoryToActivate,
   MissingCustomerId,

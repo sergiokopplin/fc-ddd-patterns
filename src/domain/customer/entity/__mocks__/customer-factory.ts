@@ -1,6 +1,7 @@
 import { faker } from '@faker-js/faker'
-import { Customer, CustomerParams } from '../customer'
+
 import { makeAddressSut } from '../../value-object/__mocks__/address-factory'
+import { Customer, CustomerParams } from '../customer'
 
 export const makeCustomerSut = (
   params?: Partial<CustomerParams>

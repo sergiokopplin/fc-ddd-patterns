@@ -1,8 +1,9 @@
+import { v4 as uuid } from 'uuid'
+
 import { Customer } from '../../customer/entity/customer'
 import { Order } from '../entity/order'
-import { MinimumItemsOnOrderService } from './order-service.errors'
 import { OrderItem } from '../value-object/order-item'
-import { v4 as uuid } from 'uuid'
+import { MinimumItemsOnOrderService } from './order-service.errors'
 
 export class OrderService {
   public static placeOrder (customer: Customer, items: OrderItem[]): Order {

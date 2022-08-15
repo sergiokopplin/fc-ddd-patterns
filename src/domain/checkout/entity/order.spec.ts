@@ -1,11 +1,11 @@
+import { makeOrderItemSut } from '../value-object/__mocks__/order-item-factory'
+import { makeOrderSut } from './__mocks__/order-factory'
 import {
-  MissingOrderId,
   MissingOrderCustomerId,
+  MissingOrderId,
   MissingOrderItems,
   NotEnoughOrderItems
 } from './order.errors'
-import { makeOrderItemSut } from '../value-object/__mocks__/order-item-factory'
-import { makeOrderSut } from './__mocks__/order-factory'
 
 describe('Order Entity', () => {
   test('Should create Entity without errors', () => {

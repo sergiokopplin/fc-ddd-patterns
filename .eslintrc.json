@@ -3,7 +3,7 @@
     "es2021": true,
     "node": true
   },
-  "extends": "standard-with-typescript",
+  "extends": ["standard-with-typescript", "plugin:sonarjs/recommended"],
   "overrides": [],
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -13,6 +13,9 @@
   "rules": {
     "@typescript-eslint/strict-boolean-expressions": 0,
     "@typescript-eslint/no-extraneous-class": 0,
-    "@typescript-eslint/adjacent-overload-signatures": 0
-  }
+    "@typescript-eslint/adjacent-overload-signatures": 0,
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
+  },
+  "plugins": ["simple-import-sort", "sonarjs"]
 }

@@ -1,4 +1,5 @@
 import { faker } from '@faker-js/faker'
+
 import { Address, AddressParams } from '../address'
 
 export const makeAddressSut = (

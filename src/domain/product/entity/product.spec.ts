@@ -1,9 +1,9 @@
+import { makeProductSut } from './__mocks__/product-factory'
 import {
   MissingProductId,
   MissingProductName,
   PriceGreaterThanZero
 } from './product.errors'
-import { makeProductSut } from './__mocks__/product-factory'
 
 describe('Product Entity', () => {
   test('Should create Entity without errors', () => {

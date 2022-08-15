@@ -1,6 +1,7 @@
 import { faker } from '@faker-js/faker'
-import { Order, OrderParams } from '../order'
 import { makeOrderItemSut } from 'domain/checkout'
+
+import { Order, OrderParams } from '../order'
 
 export const makeOrderSut = (params?: Partial<OrderParams>): { sut: Order } => {
   const sutParams: OrderParams = {

@@ -1,10 +1,10 @@
+import { makeAddressSut } from './__mocks__/address-factory'
 import {
   MissingCustomerCity,
   MissingCustomerNumber,
   MissingCustomerStreet,
   MissingCustomerZip
 } from './address.errors'
-import { makeAddressSut } from './__mocks__/address-factory'
 
 describe('Address Value Object', () => {
   test('Should create Value Object without errors', () => {

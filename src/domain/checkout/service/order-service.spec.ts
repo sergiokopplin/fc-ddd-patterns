@@ -1,8 +1,8 @@
+import { makeCustomerSut } from '../../customer/entity/__mocks__/customer-factory'
+import { makeOrderSut } from '../entity/__mocks__/order-factory'
+import { makeOrderItemSut } from '../value-object/__mocks__/order-item-factory'
 import { OrderService } from './order-service'
 import { MinimumItemsOnOrderService } from './order-service.errors'
-import { makeCustomerSut } from '../../customer/entity/__mocks__/customer-factory'
-import { makeOrderItemSut } from '../value-object/__mocks__/order-item-factory'
-import { makeOrderSut } from '../entity/__mocks__/order-factory'
 
 describe('OrderService Entity', () => {
   test('Should placeOrder and put items', () => {

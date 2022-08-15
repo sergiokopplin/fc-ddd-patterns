@@ -1,4 +1,5 @@
 import { faker } from '@faker-js/faker'
+
 import { Product, ProductParams } from '../product'
 
 export const makeProductSut = (

@@ -3,6 +3,9 @@ import { CustomerRepositoryInterface } from '../../../../domain/customer/reposit
 import CustomerModel from './customer.model'
 
 export default class CustomerRepository implements CustomerRepositoryInterface {
+  update: (entity: Customer) => Promise<void>
+  find: (id: string) => Promise<Customer>
+  findAll: () => Promise<Customer[]>
   async create (entity: Customer): Promise<void> {
     await CustomerModel.create({
       id: entity.id,
@@ -14,17 +17,5 @@ export default class CustomerRepository implements CustomerRepositoryInterface {
       active: entity.isActive(),
       rewardPoints: entity.rewardPoints
     })
-  }
-
-  async find (id: string): Promise<Customer> {
-
-  }
-
-  async findAll (): Promise<Customer[]> {
-
-  }
-
-  async update (entity: Customer): Promise<void> {
-
   }
 }

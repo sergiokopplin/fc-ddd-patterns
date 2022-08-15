@@ -2,28 +2,6 @@
 
 <!-- infrastructure/customer/repository/sequelize -->
 
-## Sequelize Setup
-
-```txt
-let sequelize: Sequelize
-
-beforeEach(async () => {
-  sequelize = new Sequelize({
-    dialect: 'sqlite',
-    storage: ':memory:',
-    logging: false,
-    sync: { force: true }
-  })
-
-  sequelize.addModels([CustomerModel])
-  await sequelize.sync()
-})
-
-afterEach(async () => {
-  await sequelize.close()
-})
-```
-
 ## Customer Model
 
 ```txt

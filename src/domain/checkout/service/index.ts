@@ -1,2 +1,2 @@
 export * from './order-service'
-export * from './order-service.errors'
+export * from './order-service-errors'

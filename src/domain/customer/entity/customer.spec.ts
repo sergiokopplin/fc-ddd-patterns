@@ -4,7 +4,7 @@ import {
   AddressMandatoryToActivate,
   MissingCustomerId,
   MissingCustomerName
-} from './customer.errors'
+} from './customer-errors'
 
 describe('Customer Entity', () => {
   test('Should create Entity without errors', () => {

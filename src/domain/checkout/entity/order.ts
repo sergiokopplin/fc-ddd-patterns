@@ -4,7 +4,7 @@ import {
   MissingOrderId,
   MissingOrderItems,
   NotEnoughOrderItems
-} from './order.errors'
+} from './order-errors'
 
 type Id = string
 type CustomerId = string

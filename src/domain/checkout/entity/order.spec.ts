@@ -5,7 +5,7 @@ import {
   MissingOrderId,
   MissingOrderItems,
   NotEnoughOrderItems
-} from './order.errors'
+} from './order-errors'
 
 describe('Order Entity', () => {
   test('Should create Entity without errors', () => {

@@ -4,7 +4,7 @@ import {
   MissingCustomerNumber,
   MissingCustomerStreet,
   MissingCustomerZip
-} from './address.errors'
+} from './address-errors'
 
 describe('Address Value Object', () => {
   test('Should create Value Object without errors', () => {

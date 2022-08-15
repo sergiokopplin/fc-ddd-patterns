@@ -3,7 +3,7 @@ import {
   AddressMandatoryToActivate,
   MissingCustomerId,
   MissingCustomerName
-} from './customer.errors'
+} from './customer-errors'
 
 type Id = string
 type Name = string

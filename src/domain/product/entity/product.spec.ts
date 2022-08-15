@@ -3,7 +3,7 @@ import {
   MissingProductId,
   MissingProductName,
   PriceGreaterThanZero
-} from './product.errors'
+} from './product-errors'
 
 describe('Product Entity', () => {
   test('Should create Entity without errors', () => {

@@ -3,7 +3,7 @@ import {
   MissingCustomerNumber,
   MissingCustomerStreet,
   MissingCustomerZip
-} from './address.errors'
+} from './address-errors'
 
 type Street = string
 type AddressNumber = number

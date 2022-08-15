@@ -2,7 +2,7 @@ import {
   MissingProductId,
   MissingProductName,
   PriceGreaterThanZero
-} from './product.errors'
+} from './product-errors'
 
 type Id = string
 type Name = string

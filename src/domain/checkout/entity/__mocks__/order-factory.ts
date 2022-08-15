@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 import { Order, OrderParams } from "../order";
-import { makeOrderItemSut } from "../../value-object/__mocks__/order-item-factory";
+import { makeOrderItemSut } from "domain/checkout";
 
 export const makeOrderSut = (params?: Partial<OrderParams>): { sut: Order } => {
   const sutParams: OrderParams = {

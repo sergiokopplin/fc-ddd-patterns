@@ -4,4 +4,5 @@ export default {
   },
   testEnvironment: "node",
   coverageProvider: "v8",
+  modulePaths: ["<rootDir>/src/"],
 };

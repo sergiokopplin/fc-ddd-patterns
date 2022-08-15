@@ -1,5 +1,5 @@
-import { makeSut as makeAddressSut } from "../value-object/__mocks__/address-factory";
-import { makeSut } from "./__mocks__/customer-factory";
+import { makeAddressSut } from "../value-object/__mocks__/address-factory";
+import { makeCustomerSut } from "./__mocks__/customer-factory";
 
 import {
   AddressMandatoryToActivate,
@@ -9,32 +9,32 @@ import {
 
 describe("Customer Entity", () => {
   test("Should create Entity without errors", () => {
-    const { sut } = makeSut();
+    const { sut } = makeCustomerSut();
 
     expect(sut).toBeTruthy();
   });
 
   test("Should get id", () => {
-    const { sut } = makeSut({ id: "custom_id" });
+    const { sut } = makeCustomerSut({ id: "custom_id" });
 
     expect(sut.id).toEqual("custom_id");
   });
 
   test("Should get name", () => {
-    const { sut } = makeSut({ name: "custom_name" });
+    const { sut } = makeCustomerSut({ name: "custom_name" });
 
     expect(sut.name).toEqual("custom_name");
   });
 
   test("Should get rewardPoints", () => {
-    const { sut } = makeSut({ rewardPoints: 1234 });
+    const { sut } = makeCustomerSut({ rewardPoints: 1234 });
 
     expect(sut.rewardPoints).toEqual(1234);
   });
 
   test("Should get Address", () => {
     const customAddress = makeAddressSut().sut;
-    const { sut } = makeSut({ address: customAddress });
+    const { sut } = makeCustomerSut({ address: customAddress });
 
     expect(sut.address).toEqual(customAddress);
   });
@@ -54,7 +54,7 @@ describe("Customer Entity", () => {
       zip: "second_custom_zip",
     }).sut;
 
-    const { sut } = makeSut({ address: customAddress });
+    const { sut } = makeCustomerSut({ address: customAddress });
 
     expect(sut.address.city).toEqual("custom_city");
     expect(sut.address.number).toEqual(1234);
@@ -84,7 +84,7 @@ describe("Customer Entity", () => {
       zip: "second_custom_zip",
     }).sut;
 
-    const { sut } = makeSut({ address: customAddress });
+    const { sut } = makeCustomerSut({ address: customAddress });
 
     expect(sut.address.city).toEqual("custom_city");
     expect(sut.address.number).toEqual(1234);
@@ -100,13 +100,13 @@ describe("Customer Entity", () => {
   });
 
   test("Should return isActive", () => {
-    const { sut } = makeSut();
+    const { sut } = makeCustomerSut();
 
     expect(sut.isActive()).toEqual(false);
   });
 
   test("Should activate", () => {
-    const { sut } = makeSut();
+    const { sut } = makeCustomerSut();
 
     expect(sut.isActive()).toEqual(false);
 
@@ -116,7 +116,7 @@ describe("Customer Entity", () => {
   });
 
   test("Should deactivate", () => {
-    const { sut } = makeSut({ active: true });
+    const { sut } = makeCustomerSut({ active: true });
 
     expect(sut.isActive()).toEqual(true);
 
@@ -126,7 +126,7 @@ describe("Customer Entity", () => {
   });
 
   test("Should addRewardPoints", () => {
-    const { sut } = makeSut({ rewardPoints: 0 });
+    const { sut } = makeCustomerSut({ rewardPoints: 0 });
 
     sut.addRewardPoints(2);
     sut.addRewardPoints(3);
@@ -136,7 +136,7 @@ describe("Customer Entity", () => {
   });
 
   test("Should changeName", () => {
-    const { sut } = makeSut({ name: "custom_name" });
+    const { sut } = makeCustomerSut({ name: "custom_name" });
 
     expect(sut.name).toBe("custom_name");
 
@@ -146,17 +146,19 @@ describe("Customer Entity", () => {
   });
 
   test("Should throw when id missing", () => {
-    expect(() => makeSut({ id: null })).toThrowError(new MissingCustomerId());
+    expect(() => makeCustomerSut({ id: null })).toThrowError(
+      new MissingCustomerId()
+    );
   });
 
   test("Should throw when name missing", () => {
-    expect(() => makeSut({ name: null })).toThrowError(
+    expect(() => makeCustomerSut({ name: null })).toThrowError(
       new MissingCustomerName()
     );
   });
 
   test("Should throw when activate without address", () => {
-    const { sut } = makeSut({ address: null });
+    const { sut } = makeCustomerSut({ address: null });
 
     expect(() => sut.activate()).toThrowError(new AddressMandatoryToActivate());
   });

@@ -3,35 +3,35 @@ import {
   MissingProductName,
   PriceGreaterThanZero,
 } from "./product.errors";
-import { makeSut } from "./__mocks__/product-factory";
+import { makeProductSut } from "./__mocks__/product-factory";
 
 describe("Product Entity", () => {
   test("Should create Entity without errors", () => {
-    const { sut } = makeSut();
+    const { sut } = makeProductSut();
 
     expect(sut).toBeTruthy();
   });
 
   test("Should get id", () => {
-    const { sut } = makeSut({ id: "custom_id" });
+    const { sut } = makeProductSut({ id: "custom_id" });
 
     expect(sut.id).toBe("custom_id");
   });
 
   test("Should get name", () => {
-    const { sut } = makeSut({ name: "custom_name" });
+    const { sut } = makeProductSut({ name: "custom_name" });
 
     expect(sut.name).toBe("custom_name");
   });
 
   test("Should get price", () => {
-    const { sut } = makeSut({ price: 10 });
+    const { sut } = makeProductSut({ price: 10 });
 
     expect(sut.price).toBe(10);
   });
 
   test("Should changeName", () => {
-    const { sut } = makeSut({ name: "custom_name" });
+    const { sut } = makeProductSut({ name: "custom_name" });
 
     expect(sut.name).toBe("custom_name");
 
@@ -41,7 +41,7 @@ describe("Product Entity", () => {
   });
 
   test("Should changePrice", () => {
-    const { sut } = makeSut({ price: 1234 });
+    const { sut } = makeProductSut({ price: 1234 });
 
     expect(sut.price).toBe(1234);
 
@@ -51,17 +51,19 @@ describe("Product Entity", () => {
   });
 
   test("Should throw when id missing", () => {
-    expect(() => makeSut({ id: null })).toThrowError(new MissingProductId());
+    expect(() => makeProductSut({ id: null })).toThrowError(
+      new MissingProductId()
+    );
   });
 
   test("Should throw when name missing", () => {
-    expect(() => makeSut({ name: null })).toThrowError(
+    expect(() => makeProductSut({ name: null })).toThrowError(
       new MissingProductName()
     );
   });
 
   test("Should throw when price less than zero", () => {
-    expect(() => makeSut({ price: -1 })).toThrowError(
+    expect(() => makeProductSut({ price: -1 })).toThrowError(
       new PriceGreaterThanZero()
     );
   });

@@ -1,8 +1,8 @@
 import { Sequelize } from "sequelize-typescript";
 import CustomerModel from "./customer.model";
 import CustomerRepository from "./customer.repository";
-import { makeSut as makeCustomerSut } from "../../../../domain/customer/entity/__mocks__/customer-factory";
-import { makeSut as makeAddressSut } from "../../../../domain/customer/value-object/__mocks__/address-factory";
+import { makeCustomerSut } from "../../../../domain/customer/entity/__mocks__/customer-factory";
+import { makeAddressSut } from "../../../../domain/customer/value-object/__mocks__/address-factory";
 
 describe("Customer repository test", () => {
   let sequelize: Sequelize;

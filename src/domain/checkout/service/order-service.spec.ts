@@ -1,27 +1,27 @@
 import { OrderService } from "./order-service";
 import { MinimumItemsOnOrderService } from "./order-service.errors";
-import { makeSut as makeSutCustomer } from "../../customer/entity/__mocks__/customer-factory";
-import { makeSut as makeSutOrderItem } from "../value-object/__mocks__/order-item-factory";
-import { makeSut as makeSutOrder } from "../entity/__mocks__/order-factory";
+import { makeCustomerSut } from "../../customer/entity/__mocks__/customer-factory";
+import { makeOrderItemSut } from "../value-object/__mocks__/order-item-factory";
+import { makeOrderSut } from "../entity/__mocks__/order-factory";
 
 describe("OrderService Entity", () => {
   test("Should placeOrder and put items", () => {
-    const result = OrderService.placeOrder(makeSutCustomer().sut, [
-      makeSutOrderItem().sut,
-      makeSutOrderItem().sut,
+    const result = OrderService.placeOrder(makeCustomerSut().sut, [
+      makeOrderItemSut().sut,
+      makeOrderItemSut().sut,
     ]);
 
     expect(result.items.length).toEqual(2);
   });
 
   test("Should placeOrder and calculate reward", () => {
-    const customer = makeSutCustomer().sut;
+    const customer = makeCustomerSut().sut;
     const result = OrderService.placeOrder(customer, [
-      makeSutOrderItem({
+      makeOrderItemSut({
         price: 10,
         quantity: 2,
       }).sut,
-      makeSutOrderItem({
+      makeOrderItemSut({
         price: 10,
         quantity: 2,
       }).sut,
@@ -33,17 +33,17 @@ describe("OrderService Entity", () => {
 
   test("Should total", () => {
     const total = OrderService.total([
-      makeSutOrder({
+      makeOrderSut({
         items: [
-          makeSutOrderItem({
+          makeOrderItemSut({
             price: 100,
             quantity: 3,
           }).sut,
-          makeSutOrderItem({
+          makeOrderItemSut({
             price: 100,
             quantity: 2,
           }).sut,
-          makeSutOrderItem({
+          makeOrderItemSut({
             price: 100,
             quantity: 1,
           }).sut,
@@ -56,7 +56,7 @@ describe("OrderService Entity", () => {
 
   test("Should throw when items are zero", () => {
     expect(() =>
-      OrderService.placeOrder(makeSutCustomer().sut, [])
+      OrderService.placeOrder(makeCustomerSut().sut, [])
     ).toThrowError(new MinimumItemsOnOrderService());
   });
 });

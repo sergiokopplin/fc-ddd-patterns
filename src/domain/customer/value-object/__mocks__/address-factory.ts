@@ -1,7 +1,9 @@
 import { faker } from "@faker-js/faker";
 import { Address, AddressParams } from "../address";
 
-export const makeSut = (params?: Partial<AddressParams>): { sut: Address } => {
+export const makeAddressSut = (
+  params?: Partial<AddressParams>
+): { sut: Address } => {
   const sutParams: AddressParams = {
     street: faker.random.word(),
     city: faker.random.word(),

@@ -1,13 +1,13 @@
-import { makeSut } from "../entity/__mocks__/product-factory";
+import { makeProductSut } from "../entity/__mocks__/product-factory";
 import { ProductService } from "./product-service";
 
 describe("ProductService", () => {
   it("Should increasePrice", () => {
     const products = [
-      makeSut({
+      makeProductSut({
         price: 100,
       }).sut,
-      makeSut({
+      makeProductSut({
         price: 200,
       }).sut,
     ];

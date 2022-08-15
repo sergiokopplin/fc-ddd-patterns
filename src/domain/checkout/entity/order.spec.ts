@@ -4,30 +4,30 @@ import {
   MissingOrderItems,
   NotEnoughOrderItems,
 } from "./order.errors";
-import { makeSut as makeOrderItemSut } from "../value-object/__mocks__/order-item-factory";
-import { makeSut } from "./__mocks__/order-factory";
+import { makeOrderItemSut } from "../value-object/__mocks__/order-item-factory";
+import { makeOrderSut } from "./__mocks__/order-factory";
 
 describe("Order Entity", () => {
   test("Should create Entity without errors", () => {
-    const { sut } = makeSut();
+    const { sut } = makeOrderSut();
 
     expect(sut).toBeTruthy();
   });
 
   test("Should get id", () => {
-    const { sut } = makeSut({ id: "custom_id" });
+    const { sut } = makeOrderSut({ id: "custom_id" });
 
     expect(sut.id).toEqual("custom_id");
   });
 
   test("Should get customerId", () => {
-    const { sut } = makeSut({ customerId: "custom_customerId" });
+    const { sut } = makeOrderSut({ customerId: "custom_customerId" });
 
     expect(sut.customerId).toEqual("custom_customerId");
   });
 
   test("Should get items", () => {
-    const { sut } = makeSut({
+    const { sut } = makeOrderSut({
       items: [
         makeOrderItemSut().sut,
         makeOrderItemSut().sut,
@@ -39,7 +39,7 @@ describe("Order Entity", () => {
   });
 
   test("Should return total", () => {
-    const { sut } = makeSut({
+    const { sut } = makeOrderSut({
       items: [
         makeOrderItemSut({
           price: 5,
@@ -60,23 +60,23 @@ describe("Order Entity", () => {
   });
 
   test("Should throw when id missing", () => {
-    expect(() => makeSut({ id: null })).toThrowError(new MissingOrderId());
+    expect(() => makeOrderSut({ id: null })).toThrowError(new MissingOrderId());
   });
 
   test("Should throw when customerId missing", () => {
-    expect(() => makeSut({ customerId: null })).toThrowError(
+    expect(() => makeOrderSut({ customerId: null })).toThrowError(
       new MissingOrderCustomerId()
     );
   });
 
   test("Should throw when items missing", () => {
-    expect(() => makeSut({ items: null })).toThrowError(
+    expect(() => makeOrderSut({ items: null })).toThrowError(
       new MissingOrderItems()
     );
   });
 
   test("Should throw when items are zero", () => {
-    expect(() => makeSut({ items: [] })).toThrowError(
+    expect(() => makeOrderSut({ items: [] })).toThrowError(
       new NotEnoughOrderItems()
     );
   });
